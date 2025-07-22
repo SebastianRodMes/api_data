@@ -22,5 +22,5 @@ COPY ./src ./src
 # Exponer el puerto
 EXPOSE 5001
 
-# Comando para ejecutar la aplicación
-CMD ["bash", "-c", "source apiEnv/bin/activate && uwsgi -w src.api_data:app --http-socket 0.0.0.0:5001"]
+# Comando para ejecutar la aplicación con Gunicorn
+CMD ["bash", "-c", "source apiEnv/bin/activate && gunicorn -w 4 -b 0.0.0.0:5001 src.api_data:app"]
