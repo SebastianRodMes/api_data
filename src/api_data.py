@@ -29,8 +29,7 @@ wsgi_app = app.wsgi_app
 from pymongo import MongoClient
 
 def contextDB():
-    conex = MongoClient(host=['127.0.0.1:27017'], username='admin', password='parda99*')
-    #conexDB = conex.apiData_01
+    conex = MongoClient(host=['127.0.0.1:27017'])
     return conex
 
 
